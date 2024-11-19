@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+service HelloWorldService {
+  rpc hello(HelloRequest) returns (HelloResponse) {}
+  rpc election(ElectionData) returns (ElectionResponse) {}
+}
+
+message HelloRequest {
+  string firstname = 1;
+  string lastname = 2;
+}
+
+message HelloResponse {
+  string text = 1;
+}
+
+message ElectionData {
+  string name = 1;
+  int32 votes = 2;
+}
+
+message ElectionResponse{
+  string electiontext = 1;
+}
